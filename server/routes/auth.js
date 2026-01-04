@@ -1,7 +1,7 @@
 const express=require('express');
 const router=express.Router();      
 const jwt=require('jsonwebtoken');
-const User=require('../models/user.js');   
+const User=require('../models/User.js');   
 const bcrypt=require('bcryptjs');
 const Profile=require('../models/profile.js');
 const JWT_SECRET=process.env.JWT_SECRET;
