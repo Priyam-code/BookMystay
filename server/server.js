@@ -22,4 +22,10 @@ mongoose
   .then(() => console.log("Connected to MongoDB"))
   .catch(err => console.error("error connecting to mongodb", err));
 
-app.listen(5000,()=>{console.log("server is running on port 5000")});
+if (process.env.NODE_ENV !== "production") {
+  app.listen(process.env.PORT || 5000, () => {
+    console.log("server is running on port", process.env.PORT || 5000);
+  });
+}
+
+module.exports = app;
